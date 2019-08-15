@@ -5,7 +5,7 @@ pipeline {
   }
 	 stage("App Build started"){
       echo 'App build started..'
-      git credentialsId: 'Github-ID', url: 'https://github.com/itrainavengers/python-docker-app-openshifts.git'
+      git credentialsId: 'Github-ID', url: 'https://github.com/thadiwada/Jenkins-imag.git'
       }
   agent any
   stages {
