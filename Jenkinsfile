@@ -1,6 +1,6 @@
 pipeline {
     environment {
-      registryCredential = ‘dockerID’
+      registryCredential = 'dockerID'
     }
   agent any
   stages {
