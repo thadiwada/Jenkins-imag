@@ -41,9 +41,9 @@ pipeline {
         }
         stage('Quality Tests') {
           steps {
-            sh 'docker login --username $DOCKER_USR --password $DOCKER_PSW'
-            sh 'docker tag nodeapp-dev:trunk <DockerHub Username>/nodeapp-dev:latest'
-            sh 'docker push <DockerHub Username>/nodeapp-dev:latest'
+            sh 'docker login --username thadiwada --password subhal@xmi3'
+            sh 'docker tag nodeapp-dev:trunk thadiwada/nodeapp-dev:latest'
+            sh 'docker push thadiwada/nodeapp-dev:latest'
           }
         }
       }
