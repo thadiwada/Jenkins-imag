@@ -1,7 +1,8 @@
 pipeline {
     environment {
-      registryCredential = 'dockerID'
-    }
+    registry = "thadiwada/nodeapp-prod"
+    registryCredential = 'dockerID'
+  }
   agent any
   stages {
 // Building your Test Images
