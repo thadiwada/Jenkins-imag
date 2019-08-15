@@ -3,6 +3,10 @@ pipeline {
     registry = "thadiwada/nodeapp-prod"
     registryCredential = 'dockerID'
   }
+	 stage("App Build started"){
+      echo 'App build started..'
+      git credentialsId: 'Github-ID', url: 'https://github.com/itrainavengers/python-docker-app-openshifts.git'
+      }
   agent any
   stages {
 // Building your Test Images
