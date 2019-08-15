@@ -1,7 +1,6 @@
 pipeline {
     environment {
-      registry = "thadiwada/nodeapp-prod"
-	  registryCredential = ‘dockerID’
+      DOCKER = credentials('dockerID')
     }
   agent any
   stages {
@@ -32,7 +31,7 @@ pipeline {
       parallel {
         stage('Mocha Tests') {
           steps {
-		    sh 'docker network create --driver bridge "my_isolated_bridge_network"'
+		  sh 'docker network create --driver bridge "my_isolated_bridge_network"'
             sh 'docker run --name nodeapp-dev --network="my_isolated_bridge_network" -d \
             -p 9000:9000 nodeapp-dev:trunk'
             sh 'docker run --name test-image -v $PWD:/JUnit --network="my_isolated_bridge_network" \
